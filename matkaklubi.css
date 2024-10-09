@@ -1,0 +1,194 @@
+html {
+    font-size: 16px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.header-container {
+    background-image: url(./Assets/Hills.png);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 48.625rem;
+}
+
+.logo-area {
+    display: flex;
+}
+.logo-image img {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+}
+
+.logo-name {
+    width: 9rem;
+    font-size: 2.0625rem;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #0B0B0B;
+    opacity: 1;
+    font-weight: 800;
+    line-height: 2rem;
+}
+
+.menuu {
+    font-size: 1.05rem;
+    letter-spacing: 0.17rem;
+    color: #000000;
+    opacity: 1;
+    font-weight: 800;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: grey;
+}
+
+@media screen and (min-width: 992px) {
+.menuu {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: right;
+    align-items: center;
+}
+.menuu div {
+    margin-left: 3rem;;
+}
+.pealkiri-kastid {
+    padding-top: 14.44rem;
+}
+}
+
+@media screen and (min-width: 1px) {
+    .menuu {
+        margin-top: 2rem;
+    }
+}
+
+.kolmas-rida {
+    p {margin-bottom: -0.5rem;
+}
+}
+
+.heading1 {
+    font-size: 2.47rem;
+    font-weight: 800;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #0B0B0B;
+    opacity: 1;
+    margin-top: 6rem;
+}
+
+.heading2 {
+    font-size: 4.64rem;
+    font-weight: 800;
+    justify-content: left;
+    letter-spacing: 0px;
+    color: #0B0B0B;
+    opacity: 1;
+    display: block;
+    margin-left: -1.5rem;
+}
+
+.heading3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #0B0B0B;
+    opacity: 1;
+}
+
+@media  and (min-width: 992px) {
+    .pealkiri-kastid {
+        padding-top: 14.44rem;
+    }
+}
+
+.call-to-action {
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #0B0B0B;
+    height: 3.625rem;
+    width: 15rem;
+    font-size: 0.78rem;
+    color: white;
+    text-align: center;
+    align-items: center;
+    font-weight: 800;
+}
+
+.rida {
+    display: flex;
+}
+
+.liblikas1 {
+    width: 4.7rem;
+    height: 3.75rem;
+    margin-top: 2rem;
+    margin-left: auto;
+}
+
+.call-to-action {
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    a:hover {
+        color: grey;
+    }
+}
+
+.liblikas2 {
+    width: 3.75rem;
+    height: 2rem;
+    margin-left: -2.25rem;
+    margin-top: 1rem;
+}
+
+.pealkiri-pilt {
+    overflow: hidden;
+}
+
+.pealkiri-pilt .matkaja {
+    width: 46.875rem;
+    height: 46.875rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: -25rem;
+}
+
+.pealkiri-pilt .vari {
+    width: 50.71rem;
+    height: 5.4375rem;
+    margin-top: -2.5rem;
+    margin-left: -3rem;
+}
+
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 95%;
+    }
+    }
+
+.kontaktivorm input {
+    width: 33%;
+}
+
+.markuselahter input {
+    width: 100%;
+    height: 20rem;
+}
+
+.saada input {
+    margin-top: 2rem;
+    width: 20%;
+}
