@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Kontakt</title>
+    <%-include("./partials/header.ejs") %>
+    </head>
+<body>
+    <div class="header">
+        <div class="container">
+            <%-include("./partials/menyy.ejs") %>
+<div class="heading1">
+    Kirjuta meile
+</div>
+<form class="kontakteerumine" action="/s6num" method="post">
+<div class="kontaktivorm">Sinu nimi:</div>
+<div class="kontaktivorm"><input type="text" name="nimi"></div>
+<div class="kontaktivorm">Sinu e-maili aadress:</div>
+<div class="kontaktivorm"><input type="text" name="email"></div>
+<div class="kontaktivorm">Märkus</div>
+<div class="markuselahter"><input type="text" name="markus">
+</div>
+<div class="saada"><input type="submit" value="Saada"></div>
+</form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kinnitus</title>
+    <%-include("./partials/header.ejs") %>
+</head>
+<body>
+    <div class="container">
+        <%-include("./partials/menyy.ejs") %>
+        <div class="row">
+            <h1 class="heading4">Registreerumine kinnitatud</h1>
+            <div class="body1">
+                <%= nimi %>, Aitäh registreerumast matkale <%= matk.nimetus %>
+            </div>
+            <div class="body1"> Matkale on kokku registreerunud <%= matk.osalejad.length %> matkajat
+            </div>
+        </div>
+    </div>
+</body>
+</html>
