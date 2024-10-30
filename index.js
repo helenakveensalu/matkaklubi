@@ -2,7 +2,12 @@ const express = require('express')
 const ejs = require('ejs')
 const path = require("path")
 
+const { lisaMatk } = require("./model")
+const { lisaRegistreerumine, loeMatkad } = require("./model")
+
+
 const app = express()
+app.use(express.json())
 
 const PORT = process.env.PORT || 3030
 
@@ -148,5 +153,73 @@ app.post('/registreerumine', (req, res) => {
     res.render('reg_kinnitus', {matk: matkad[req.body.matkaIndex], nimi: req.body.nimi})
 })
 
+app.get('/api/lisaMatk', (req, res ) => {
+    const uusMatk = {
+        nimetus: req.query.nimetus
+    }
+    lisaMatk(uusMatk);
+    res.end("Lisatud")
+})
+
+app.get('/api/lisaRegistreerumine', (req, res ) => {
+    const uusRegistreerumine = {
+        matkaIndeks: req.query.matkaIndex,
+        nimi: req.query.nimi,
+        email: req.query.email,
+    }
+    lisaRegistreerumine(uusRegistreerumine);
+    res.end("Lisatud")
+})
+
+app.get('/admin', (req,res) => { res.render("admin")})
+
+// meetodid andmeoperatsioonide jaoks
+// read loe
+// post lisa
+// delete kustuta
+// put - andmekirjete muutmine
+// patch - andmekirjete täiendamiseks
+
+// api endpoint matkade nimekirja laadimiseks
+app.get('/api/matk', async (req, res) => {
+    const matkad = await loeMatkad()
+    res.json(matkad)
+})
+
+// api endpoint åhe matka andmete laadimiseks
+app.get('/api/matk/:matkaIndeks', (req, res) => {
+    const matk = matkad[req.params.matkaIndeks]
+    if (!matk) {
+        res.status(404).end()
+        return
+    }
+        res.json(matk)
+    }
+)
+
+// api endpoint åhe matka lisamiseks
+app.post('/api/matk', (req, res) => {
+    const uusMatk = {
+    nimetus: req.body.nimetus,
+    kirjeldus: req.body.kirjeldus,
+    pildiUrl: req.body.pildiUrl,
+    }
+    console.log(uusMatk)
+    uusMatk.osalejad = []
+    matkIndeks = matkad.length
+
+    matkad.push(uusMatk)
+    //todo: lisa matka ka mongodb andmebaasi
+    res.json(uusMatk)
+})
+
+//åhe matka kustutamine
+app.delete('/api/.matkaIndeks')
+
+//åhe matka andmete muutmine
+app.patch('/api/:matkaIndeks')
+
+//åhe matka osalejate laadimiseks
+app.get('/api/matk/:matkaIndeks/osaleja/:osalejaIndeks')
 
 app.listen(PORT)
